@@ -7,7 +7,8 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+
 eval "$(starship init bash)"
 
-. "$HOME/.cargo/env"
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
