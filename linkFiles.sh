@@ -9,13 +9,13 @@ files=$(find .)
 for f in $files; do
     # if it is file and not .sh file
     if [ -f "$f" ] && [[ "$f" != *$contain* ]] && ! grep -q "$f" ignoreFiles; then
-	source=$(readlink -f "$f")
-	dest="$desdir/${f:2}"
-	dire=$(dirname "$dest")
-	# check if target directory exist if not create it
-	[ ! -d "$dire" ] && mkdir "$dire"
-	ln -s "$source" "$dest"
-	# echo "$source $dest"
+        source=$(readlink -f "$f")
+        dest="$desdir/${f:2}"
+        dire=$(dirname "$dest")
+        # check if target directory exist if not create it
+        [ ! -d "$dire" ] && mkdir "$dire"
+        ln -s "$source" "$dest"
+        # echo "$source $dest"
     fi
 done
 

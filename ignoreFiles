@@ -3,3 +3,4 @@
 ./link.sh
 ./linkFiles.sh
 ./ignoreFiles
+./completeInstall.sh
