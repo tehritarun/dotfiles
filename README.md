@@ -27,6 +27,7 @@ To copy update configuration file run below code. it will backup your existing c
 git clone https://github.com/tehritarun/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash linkFiles.sh
+fc-cache -fv
 ```
 
 for nvim config, backup your existing config and run following code.
