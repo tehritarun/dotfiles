@@ -11,6 +11,10 @@ for f in $files; do
     if [ -f "$f" ] && [[ "$f" != *$contain* ]] && ! grep -q "$f" ignoreFiles; then
         source=$(readlink -f "$f")
         dest="$desdir/${f:2}"
+        if [ -f "$dest" ]
+        then
+            mv "$dest" "$dest.bak"
+        fi
         dire=$(dirname "$dest")
         # check if target directory exist if not create it
         [ ! -d "$dire" ] && mkdir "$dire"

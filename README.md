@@ -21,7 +21,7 @@ Optional Terminal tools
 sudo pacman -S tree fzf lazygit
 ```
 
-To copy update configuration file run below code. before running you can backup you existing configuration.
+To copy update configuration file run below code. it will backup your existing configuration files.
 
 ```bash
 git clone https://github.com/tehritarun/dotfiles.git ~/dotfiles
