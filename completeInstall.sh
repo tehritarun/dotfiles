@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S alacritty kitty git starship tmux nvim
+sudo pacman -S alacritty kitty git starship tmux neovim
 sudo pacman -S tree fzf lazygit
 git clone https://github.com/tehritarun/dotfiles.git ~/dotfiles
 cd ~/dotfiles || exit
