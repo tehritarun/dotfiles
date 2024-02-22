@@ -21,8 +21,8 @@ cd(){
 }
 
 bettercd(){
-    cd $1
-    if [ -z $1 ]
+    cd "$1"
+    if [ -z "$1" ]
     then
         selection=$(ls -a | fzf --height 40% --reverse)
         if [[ -d "$selection" ]]

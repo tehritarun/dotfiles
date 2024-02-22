@@ -16,13 +16,17 @@ for f in $files; do
         if [ -f "$dest" ] && [ "$resp" = "y" ]
         then
             mv "$dest" "$dest.bak"
-            # echo "backup $dest"
+            echo "backup created for: $dest"
+        elif [ ! -f "$dest" ]
+        then
+            dire=$(dirname "$dest")
+            # check if target directory exist if not create it
+            [ ! -d "$dire" ] && mkdir "$dire"
+            ln -s "$source" "$dest"
+            echo "Symlink created for $dest"
         fi
-        dire=$(dirname "$dest")
-        # check if target directory exist if not create it
-        [ ! -d "$dire" ] && mkdir "$dire"
-        ln -s "$source" "$dest"
-        # echo "$source $dest"
     fi
 done
+
+echo "Completed!"
 
