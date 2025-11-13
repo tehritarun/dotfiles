@@ -1,0 +1,7 @@
+font-size = 18.0
+font-family = FiraCode Nerd
+cursor-style = underline
+cursor-style-blink = false
+background-opacity = 0.8
+background-blur = 15
+theme = Monokai Classic
