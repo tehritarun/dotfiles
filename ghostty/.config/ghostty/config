@@ -1,7 +1,11 @@
 font-size = 18.0
-font-family = FiraCode Nerd
-cursor-style = underline
+font-family = "FiraCode Nerd Font"
+font-feature = "+liga"        # Standard ligatures
+font-feature = "+calt"        # Contextual alternates
+font-feature = "+clig"        # Contextual ligatures
+font-feature = "+dlig"
+cursor-style = bar
 cursor-style-blink = false
-background-opacity = 0.8
+background-opacity = 0.6
 background-blur = 15
-theme = Monokai Classic
+theme = TokyoNight
