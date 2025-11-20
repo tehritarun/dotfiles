@@ -8,7 +8,7 @@ fi
 
 # Present options to user using fzf
 echo "Select your editor:"
-selected=$(echo "VS-Code\nVS-Codium\nCursor\nAntigravity" | fzf --prompt="Select editor: " --height=10 --border)
+selected=$(echo "VS-Code\nVS-Codium\nCursor" | fzf --prompt="Select editor: " --height=10 --border)
 
 # Check if user made a selection
 if [ -z "$selected" ]; then
