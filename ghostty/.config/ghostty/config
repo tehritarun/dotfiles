@@ -1,5 +1,5 @@
 font-size = 18.0
-font-family = "FiraCode Nerd Font"
+font-family = "FiraCode Nerd Font Mono"
 font-feature = "+liga"        # Standard ligatures
 font-feature = "+calt"        # Contextual alternates
 font-feature = "+clig"        # Contextual ligatures
