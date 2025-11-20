@@ -1,5 +1,20 @@
 #!/usr/bin/env zsh
 
+# Accept input parameters
+cmd="${1:-code}"           # First parameter: command (default: code)
+folder_name="${2:-Code}"   # Second parameter: folder name (default: Code)
+
+# Validate parameters
+if [ -z "$cmd" ] || [ -z "$folder_name" ]; then
+    echo "Error: Missing required parameters"
+    echo "Usage: $0 <cmd> <folder_name>"
+    echo "Example: $0 codium VSCodium"
+    exit 1
+fi
+
+echo "Using editor command: $cmd"
+echo "Using folder name: $folder_name"
+
 # Check if Homebrew's bin exists and if it's not already in the PATH
 # if [ -x "/opt/homebrew/bin/brew" ] && [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
 #     export PATH="/opt/homebrew/bin:$PATH"
@@ -27,14 +42,14 @@ extensions=(
 )
 
 # Get a list of all currently installed extensions.
-installed_extensions=$(codium --list-extensions)
+installed_extensions=$($cmd --list-extensions)
 
 for extension in "${extensions[@]}"; do
     if echo "$installed_extensions" | grep -qi "^$extension$"; then
         echo "$extension is already installed. Skipping..."
     else
         echo "Installing $extension..."
-        codium --install-extension "$extension"
+        $cmd --install-extension "$extension"
     fi
 done
 
@@ -42,7 +57,7 @@ echo "VS Code extensions have been installed."
 
 # Define the target directory for VS Code user settings on macOS
 # VSCODE_USER_SETTINGS_DIR="${HOME}/Library/Application Support/Code/User"
-VSCODE_USER_SETTINGS_DIR="${HOME}/.config/VSCodium/User"
+VSCODE_USER_SETTINGS_DIR="${HOME}/.config/${folder_name}/User"
 
 # Check if VS Code settings directory exists
 if [ -d "$VSCODE_USER_SETTINGS_DIR" ]; then
@@ -56,4 +71,4 @@ else
 fi
 
 echo "VS Code Setup completed"
-codium .
+$cmd .
