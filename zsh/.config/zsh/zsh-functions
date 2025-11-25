@@ -10,7 +10,11 @@ function zsh_add_plugin() {
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
         zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
-        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        if [[ "$#" -ge 2 ]]; then
+            git clone --depth=$2 "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        else
+            git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        fi
     fi
 }
 
