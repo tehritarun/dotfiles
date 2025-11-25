@@ -1,52 +1,52 @@
 {
-    // Fonts and size
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
-    "editor.fontSize": 16,
-    "editor.fontLigatures": true,
-    "debug.console.fontSize": 16,
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-    "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontLigatures.enabled": false,
-    // Apearence
-    "window.zoomLevel": 1,
-    "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Nord",
-    "editor.minimap.enabled": false,
-    "redhat.telemetry.enabled": false,
-    "workbench.editor.enablePreview": false,
-    // Settings
-    "workbench.settings.editor": "json",
-    "workbench.settings.useSplitJSON": true,
-    "workbench.settings.openDefaultSettings": true,
+  // Fonts and size
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "debug.console.fontSize": 16,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontLigatures.enabled": false,
+  // Apearence
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "ayu",
+  "workbench.colorTheme": "Nord",
+  "editor.minimap.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "workbench.editor.enablePreview": false,
+  // Settings
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.settings.openDefaultSettings": true,
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
     "editor.formatOnSave": true,
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        }
-    },
-    // Python related settings
-    "[python]": {
-        "diffEditor.ignoreTrimWhitespace": false,
-        "editor.defaultColorDecorators": "never",
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        }
-    },
-    // Notebook related settings
-    "notebook.defaultFormatter": "charliermarsh.ruff",
-    "notebook.formatOnSave.enabled": true,
-    "notebook.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
-    },
-    "notebook.lineNumbers": "on",
-    "notebook.output.scrolling": true   
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  // Python related settings
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.defaultColorDecorators": "never",
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  // Notebook related settings
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "notebook.lineNumbers": "on",
+  "notebook.output.scrolling": true
 }
