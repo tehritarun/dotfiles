@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if zsh is installed
-./install.sh zsh
+./bin/install.sh zsh
 
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
@@ -11,6 +11,6 @@ else
     echo "zsh is already set as the default shell."
 fi
 
-cd ..
+# cd ..
 stow zsh
-cd -
+# cd -

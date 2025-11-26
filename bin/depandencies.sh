@@ -7,5 +7,5 @@ required_dependencies=(
 )
 
 for dependency in "${required_dependencies[@]}"; do
-    ./install.sh "$dependency"
+    ./bin/install.sh "$dependency"
 done

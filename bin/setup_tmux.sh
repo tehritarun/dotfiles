@@ -1,10 +1,10 @@
 #!/bin/bash
 
-./install.sh tmux
+./bin/install.sh tmux
 
-cd ..
+# cd ..
 stow tmux
-cd -
+# cd -
 
 # Clone TPM if it doesn't exist
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
