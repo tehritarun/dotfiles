@@ -48,5 +48,7 @@
     "source.organizeImports": "explicit"
   },
   "notebook.lineNumbers": "on",
-  "notebook.output.scrolling": true
+  "notebook.output.scrolling": true,
+  "git.autofetch": true,
+  "json.schemaDownload.enable": true
 }
