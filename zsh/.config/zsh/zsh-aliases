@@ -8,6 +8,7 @@ alias srczsh="source $ZDOTDIR/.zshrc"
 alias zshconfig="nvim $ZDOTDIR/.zshrc"
 alias act='source ./.venv/bin/activate'
 alias inv='nvim $(fzf --preview="bat --color=always {}")'
+alias ...='cd ../..'
 
 # TMUX aliases
 alias tt="python3 $HOME/projects/tmux-sess/main.py"

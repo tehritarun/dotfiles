@@ -13,6 +13,8 @@ export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.miniconda/bin:$PATH
 export PATH="$PATH:$(go env GOPATH)/bin" 
 export EDITOR=nvim
+export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 30% --preview='bat -p --color=always {}'"
+export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-preview"
 
 autoload edit-command-line
 zle -N edit-command-line
