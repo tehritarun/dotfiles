@@ -1,4 +1,4 @@
-font-size = 18.0
+font-size = 18
 font-family = "FiraCode Nerd Font Mono"
 font-feature = "+liga"        # Standard ligatures
 font-feature = "+calt"        # Contextual alternates
@@ -6,6 +6,6 @@ font-feature = "+clig"        # Contextual ligatures
 font-feature = "+dlig"
 cursor-style = bar
 cursor-style-blink = false
-background-opacity = 0.6
-background-blur = 15
+background-opacity = 0.9
+background-blur = 30
 theme = TokyoNight

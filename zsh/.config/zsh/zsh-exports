@@ -16,11 +16,6 @@ export EDITOR=nvim
 export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height 30% --preview='bat -p --color=always {}'"
 export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-preview"
 
-autoload edit-command-line
-zle -N edit-command-line
-# Optional: Bind Ctrl-x Ctrl-e (Emacs style)
-bindkey '^X^E' edit-command-line
-
 # chpwd hook for python
 chpwd() {
   if [[ -d .venv ]]; then
