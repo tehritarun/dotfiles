@@ -11,7 +11,7 @@ alias inv='nvim $(fzf --preview="bat --color=always {}")'
 alias ...='cd ../..'
 
 # TMUX aliases
-alias tt="python3 $HOME/projects/tmux-sess/main.py"
+alias tt="$HOME/projects/tmux-sess/tmux-sess.sh"
 alias ta='tmux a'
 alias tl='tmux ls'
 

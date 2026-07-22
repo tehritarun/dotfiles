@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# For macOS system uncomment following line
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -72,6 +75,8 @@ autoload edit-command-line
 zle -N edit-command-line
 # Optional: Bind Ctrl-x Ctrl-e (Emacs style)
 bindkey '^X^E' edit-command-line
+
+bindkey '^G' clear-screen
 
 # Shell integrations
 eval "$(fzf --zsh)"
