@@ -1,0 +1,18 @@
+gui:
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+  showIcons: true
+
+git:
+  pagers:
+    - colorArgs: always
+      pager: delta --dark --paging=never -s
+  commit:
+    signOff: false
+
+keybinding:
+  universal:
+    quit: 'q'
+    return: '<esc>'
