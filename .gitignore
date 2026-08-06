@@ -1,2 +1,8 @@
+# zsh plugin directory
 plugins
+
+# zsh dump
 .zcompdump
+
+# zed prompts directory
+prompts
