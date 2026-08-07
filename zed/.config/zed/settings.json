@@ -32,4 +32,13 @@
       "language_servers": ["gopls"],
     },
   },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "typeCheckingMode": "off",
+        },
+      },
+    },
+  },
 }
