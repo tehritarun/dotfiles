@@ -18,16 +18,16 @@ fi
 echo "$selected_terminals" | while read -r terminal; do
     if [ -n "$terminal" ]; then
         echo "Setting up $terminal..."
-        
+
         # Install the terminal
         ./bin/install.sh "$terminal"
-        
+
         # Stow the configuration
         # Assuming the config folder is in the parent directory (../)
         # cd ..
-        stow $terminal
+        stow "$terminal"
         # cd -
-        
+
         echo "$terminal setup complete."
     fi
 done

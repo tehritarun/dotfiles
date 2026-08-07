@@ -6,7 +6,7 @@ options=(
 )
 
 ask(){
-    resp=$(echo "$options" | fzf --prompt="$1 ")
+    resp=$(echo "${options[@]}" | fzf --prompt="$1 ")
     [ "$resp" = "Yes" ]
 }
 

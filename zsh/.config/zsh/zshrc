@@ -70,6 +70,7 @@ bindkey -s '^s' 'ncdu\n'
 bindkey '^[[P' delete-char
 bindkey "^w" up-line-or-beginning-search # Up
 bindkey "^s" down-line-or-beginning-search # Down
+bindkey " " magic-space
 bindkey -s '^Xgc' 'git commit -m ""\C-b'
 bindkey -s '^Xgl' '\C-agit clone \C-e'
 bindkey -s '^Xs' '\C-asudo \C-e'

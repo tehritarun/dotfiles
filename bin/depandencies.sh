@@ -4,6 +4,7 @@ required_dependencies=(
     fzf
     stow
     git
+    jq
 )
 
 for dependency in "${required_dependencies[@]}"; do
