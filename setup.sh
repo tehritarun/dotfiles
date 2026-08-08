@@ -15,7 +15,7 @@ packages=(
     kitty
     lazygit
     neovim
-    node
+    nodejs
     ripgrep
     ruff
     shellcheck
@@ -31,8 +31,10 @@ packages=(
 INSTALL_CMD=""
 
 if command -v pacman &>/dev/null; then
+    sudo pacman -Sy
     INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
+    # TODO: check brew setup or not
     INSTALL_CMD="brew install"
 fi
 
@@ -44,7 +46,9 @@ else
 fi
 
 echo "------------------INSTALLING DEPANDENCIES-------------------"
-$INSTALL_CMD "${main_depandencies[*]}"
+cmd="$INSTALL_CMD ${main_depandencies[*]}"
+echo "$cmd"
+$cmd
 
 install_packages=()
 copy_config=()
@@ -73,18 +77,20 @@ for package in ${selected_packages}; do
     fi
 done
 
-printf "--------------------INSTALLING PACKAGES---------------------"
+echo "--------------------INSTALLING PACKAGES---------------------"
 echo "${install_packages[*]}"
-$INSTALL_CMD "${install_packages[*]}"
+cmd="$INSTALL_CMD ${install_packages[*]}"
+echo "$cmd"
+$cmd
 
-printf "-----------------------COPYING CONFIG-----------------------"
+echo "-----------------------COPYING CONFIG-----------------------"
 printf " %s" "${copy_config[@]}"
 for pkg in "${copy_config[@]}"; do
     echo "copying config for $pkg using stow"
     stow "$pkg"
 done
 
-printf "-------------------RUNNING SETUP SCRIPTS--------------------"
+echo "-------------------RUNNING SETUP SCRIPTS--------------------"
 for scr in "${run_script[@]}"; do
     echo "running script $scr"
     $scr
