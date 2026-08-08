@@ -1,5 +1,10 @@
 # dotfiles
 
+## One click install
+``` bash
+curl -fsSL https://raw.githubusercontent.com/tehritarun/dotfiles/refs/heads/main/bin/bootstrap.sh | bash
+```
+
 Below are required programms
 - git
 - tmux
