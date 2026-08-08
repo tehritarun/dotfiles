@@ -1,12 +1,17 @@
 #!/bin/bash
 
+main_depandencies=(
+    fzf
+    stow
+    git
+)
+
 packages=(
     alacritty
     btop
-    fd
+    fd # Depandency for venv Selector
     ghostty
-    git
-    git-delta
+    git-delta # Depandency for lazygit diff view
     kitty
     lazygit
     neovim
@@ -19,10 +24,27 @@ packages=(
     yazi
     zed
     zsh
+    go
+    jq
 )
 
+INSTALL_CMD=""
+
+if command -v pacman &>/dev/null; then
+    INSTALL_CMD="pacman -S --noconfirm"
+elif command -v brew &>/dev/null; then
+    INSTALL_CMD="brew install"
+fi
+
+if [[ -z "$INSTALL_CMD" ]]; then
+    echo "Error! No configured package manager found"
+    exit 2
+else
+    echo "Detected Package Manager: $INSTALL_CMD"
+fi
+
 # install depandencies
-# ./bin/depandencies.sh
+$INSTALL_CMD "${main_depandencies[*]}"
 
 install_packages=()
 copy_config=()
@@ -46,20 +68,15 @@ for package in ${selected_packages}; do
     fi
 done
 
-# TODO: check os and assign install cmd
-install_cmd="./bin/install.sh"
-
-for pkg in "${install_packages[@]}"; do
-    echo "installing $pkg"
-    # run install script with pkg
-    $install_cmd "$pkg"
-done
+printf "\n%s" "${install_packages[@]}"
 
 for pkg in "${copy_config[@]}"; do
     echo "copying config for $pkg using stow"
     # stow "$pkg"
 done
 
+printf "\n\n\nCopy Config"
+printf "\n%s" "${copy_config[@]}"
 printf "\n\n\nRun Script"
 printf "\n%s" "${run_script[@]}"
 for scr in "${run_script[@]}"; do

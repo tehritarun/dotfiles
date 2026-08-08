@@ -9,6 +9,7 @@ alias zshconfig="nvim $ZDOTDIR/.zshrc"
 alias act='source ./.venv/bin/activate'
 alias inv='nvim $(fzf --preview="bat --color=always {}")'
 alias ...='cd ../..'
+alias import_photos='uv run ~/projects/python_scripts/import_photos.py'
 
 # TMUX aliases
 alias tt="$HOME/projects/tmux-sess/tmux-sess.sh"
