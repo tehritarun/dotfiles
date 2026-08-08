@@ -15,7 +15,6 @@ packages=(
     kitty
     lazygit
     neovim
-    nodejs
     ripgrep
     ruff
     shellcheck
@@ -28,13 +27,24 @@ packages=(
     jq
 )
 
+echo "
+------------------------------------------------------------
+ Before running this script please make sure you have run
+ system upgrade
+ For arch based system:    sudo pacman -Syu
+ For MacOS:                brew update && brew upgrade
+------------------------------------------------------------
+"
+
 INSTALL_CMD=""
 
 if command -v pacman &>/dev/null; then
     sudo pacman -Sy
+    sudo pacman -S ttf-firacode-nerd
     INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
-    # TODO: check brew setup or not
+    brew update
+    brew install --cask force font-fira-code-nerd-font
     INSTALL_CMD="brew install"
 fi
 
@@ -48,7 +58,7 @@ fi
 echo "------------------INSTALLING DEPANDENCIES-------------------"
 cmd="$INSTALL_CMD ${main_depandencies[*]}"
 echo "$cmd"
-$cmd
+$cmd || (echo "Error: Failed to download depandencies" && exit 2)
 
 install_packages=()
 copy_config=()
@@ -77,11 +87,23 @@ for package in ${selected_packages}; do
     fi
 done
 
+install-individual-package() {
+    for pkg in "${selected_packages[@]}"; do
+        if ! command -v "$pkg" &>/dev/null; then
+            echo "$pkg is not installed. Installing..."
+            cmd="$INSTALL_CMD $pkg"
+            $cmd
+        else
+            echo "$pkg is already installed."
+        fi
+    done
+}
+
 echo "--------------------INSTALLING PACKAGES---------------------"
 echo "${install_packages[*]}"
 cmd="$INSTALL_CMD ${install_packages[*]}"
 echo "$cmd"
-$cmd
+$cmd || (echo "Error: Failed to download packages. Trying individually" && install-individual-package)
 
 echo "-----------------------COPYING CONFIG-----------------------"
 printf " %s" "${copy_config[@]}"
@@ -95,3 +117,17 @@ for scr in "${run_script[@]}"; do
     echo "running script $scr"
     $scr
 done
+
+echo "
+------------------------------------------------------------
+----------------AUTOMATED SET UP COMPLETED.-----------------
+
+  To finish mannual setup please follow below setps in
+  new terminal:
+    1. run 'tmux' and then press ctrl+b then shift+i. Then
+  allow it to install plugin in background. Once downloaded
+  tmux appearence will automatically get updated.
+
+    2. Run nvim and allow it to download plugins and lsp
+------------------------------------------------------------
+"
