@@ -31,7 +31,7 @@ packages=(
 INSTALL_CMD=""
 
 if command -v pacman &>/dev/null; then
-    INSTALL_CMD="pacman -S --noconfirm"
+    INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
     INSTALL_CMD="brew install"
 fi
