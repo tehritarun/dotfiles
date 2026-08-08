@@ -43,7 +43,7 @@ else
     echo "Detected Package Manager: $INSTALL_CMD"
 fi
 
-# install depandencies
+echo "------------------INSTALLING DEPANDENCIES-------------------"
 $INSTALL_CMD "${main_depandencies[*]}"
 
 install_packages=()
@@ -51,6 +51,11 @@ copy_config=()
 run_script=()
 
 selected_packages=$(printf '%s\n' "${packages[@]}" | fzf --prompt="Select terminals> " -m)
+
+if [ ${#selected_packages[@]} -eq 0 ]; then
+    echo "No package selected"
+    exit 0
+fi
 
 for package in ${selected_packages}; do
     # Add package to install list
@@ -68,18 +73,19 @@ for package in ${selected_packages}; do
     fi
 done
 
-printf "\n%s" "${install_packages[@]}"
+printf "--------------------INSTALLING PACKAGES---------------------"
+echo "${install_packages[*]}"
+$INSTALL_CMD "${install_packages[*]}"
 
+printf "-----------------------COPYING CONFIG-----------------------"
+printf " %s" "${copy_config[@]}"
 for pkg in "${copy_config[@]}"; do
     echo "copying config for $pkg using stow"
-    # stow "$pkg"
+    stow "$pkg"
 done
 
-printf "\n\n\nCopy Config"
-printf "\n%s" "${copy_config[@]}"
-printf "\n\n\nRun Script"
-printf "\n%s" "${run_script[@]}"
+printf "-------------------RUNNING SETUP SCRIPTS--------------------"
 for scr in "${run_script[@]}"; do
     echo "running script $scr"
-    # $scr
+    $scr
 done
