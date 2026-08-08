@@ -28,8 +28,9 @@ install_packages=()
 copy_config=()
 run_script=()
 
-# TODO: ask user to select packages
-for package in "${packages[@]}"; do
+selected_packages=$(printf '%s\n' "${packages[@]}" | fzf --prompt="Select terminals> " -m)
+
+for package in ${selected_packages}; do
     # Add package to install list
     install_packages+=("$package")
 
@@ -45,9 +46,23 @@ for package in "${packages[@]}"; do
     fi
 done
 
-printf "\n\n\nInstall Package"
-printf "\n%s" "${install_packages[@]}"
-printf "\n\n\nCopy Config"
-printf "\n%s" "${copy_config[@]}"
+# TODO: check os and assign install cmd
+install_cmd="./bin/install.sh"
+
+for pkg in "${install_packages[@]}"; do
+    echo "installing $pkg"
+    # run install script with pkg
+    $install_cmd "$pkg"
+done
+
+for pkg in "${copy_config[@]}"; do
+    echo "copying config for $pkg using stow"
+    # stow "$pkg"
+done
+
 printf "\n\n\nRun Script"
 printf "\n%s" "${run_script[@]}"
+for scr in "${run_script[@]}"; do
+    echo "running script $scr"
+    # $scr
+done
