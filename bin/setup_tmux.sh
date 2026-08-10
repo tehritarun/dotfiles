@@ -15,3 +15,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 else
     echo "Tmux Plugin Manager already installed."
 fi
+
+# Setup tmux sess
+git clone https://github.com/tehritarun/tmux-sess.git "${HOME}/projects/tmux-sess"

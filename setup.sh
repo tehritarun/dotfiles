@@ -12,6 +12,8 @@ packages=(
     fd # Depandency for venv Selector
     ghostty
     git-delta # Depandency for lazygit diff view
+    go
+    jq
     kitty
     lazygit
     neovim
@@ -22,9 +24,8 @@ packages=(
     tmux
     yazi
     zed
+    zoxide
     zsh
-    go
-    jq
 )
 
 echo "
@@ -40,12 +41,14 @@ INSTALL_CMD=""
 
 if command -v pacman &>/dev/null; then
     sudo pacman -Sy
-    sudo pacman -S ttf-firacode-nerd tree-sitter-cli
+    # install arch specific packages
+    sudo pacman -S ttf-firacode-nerd tree-sitter-cli npm
     INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
     brew update
     brew install tree-sitter
-    brew install --cask force font-fira-code-nerd-font
+    # install macos specific packages
+    brew install --cask force font-fira-code-nerd-font node
     INSTALL_CMD="brew install"
 fi
 
