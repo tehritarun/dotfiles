@@ -33,6 +33,27 @@
     },
   },
   "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "codelenses": {
+          "test": true,
+          "generate": true,
+          "regenerate_cgo": true,
+          "tidy": true,
+          "upgrade_dependency": true,
+          "vendor": true,
+        },
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+      },
+    },
     "basedpyright": {
       "settings": {
         "basedpyright.analysis": {
@@ -40,5 +61,10 @@
         },
       },
     },
+  },
+  "auto_install_extensions": {
+    "tokyo-night": true,
+    "dockerfile": true,
+    "docker-compose": true,
   },
 }
