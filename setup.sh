@@ -40,10 +40,11 @@ INSTALL_CMD=""
 
 if command -v pacman &>/dev/null; then
     sudo pacman -Sy
-    sudo pacman -S ttf-firacode-nerd
+    sudo pacman -S ttf-firacode-nerd tree-sitter-cli
     INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
     brew update
+    brew install tree-sitter
     brew install --cask force font-fira-code-nerd-font
     INSTALL_CMD="brew install"
 fi
@@ -129,5 +130,7 @@ echo "
   tmux appearence will automatically get updated.
 
     2. Run nvim and allow it to download plugins and lsp
+
+    3. Reboot system so that change shell take effect
 ------------------------------------------------------------
 "

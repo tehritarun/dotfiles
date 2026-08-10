@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "------------------------SETTING ZSH-------------------------"
 # Set zsh as the default shell
 if [ "$SHELL" != "$(which zsh)" ]; then
     # install zsh if not installed

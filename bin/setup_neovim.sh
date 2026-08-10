@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "---------------------SETTING UP NEOVIM----------------------"
+
 branch_name="feature/personlised_changes-070726"
 
 # Clone nvim config if not exists

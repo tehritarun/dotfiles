@@ -2,6 +2,7 @@
 HISTFILE="${XDG_DATA_HOME:-${HOME}/.local/share}"/zsh/history
 HISTSIZE=5000
 SAVEHIST=5000
+touch "$HISTFILE"
 HISTDUP=erase
 
 export PATH="$HOME/.local/bin":$PATH

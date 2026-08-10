@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "----------------------SETTING UP TMUX-----------------------"
+
 ./bin/install.sh tmux
 
 # cd ..
