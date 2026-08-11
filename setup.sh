@@ -42,7 +42,7 @@ INSTALL_CMD=""
 if command -v pacman &>/dev/null; then
     sudo pacman -Sy
     # install arch specific packages
-    sudo pacman -S ttf-firacode-nerd tree-sitter-cli npm
+    sudo pacman -S --noconfirm ttf-firacode-nerd tree-sitter-cli npm
     INSTALL_CMD="sudo pacman -S --noconfirm"
 elif command -v brew &>/dev/null; then
     brew update

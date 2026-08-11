@@ -7,7 +7,7 @@ if [ "$SHELL" != "$(which zsh)" ]; then
     ./bin/install.sh zsh
     # Change default shell to zsh
     echo "Setting zsh as the default shell..."
-    chsh -s "$(which zsh)"
+    sudo chsh -s "$(which zsh)"
 else
     echo "zsh is already set as the default shell."
 fi

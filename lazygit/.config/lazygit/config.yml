@@ -1,17 +1,25 @@
 gui:
   theme:
     activeBorderColor:
-      - green
+      - '#89b4fa'
       - bold
+    inactiveBorderColor:
+      - '#a6adc8'
+    optionsTextColor:
+      - '#89b4fa'
+    selectedLineBgColor:
+      - '#313244'
+    unstagedChangesColor:
+      - '#f38ba8'
+    defaultFgColor:
+      - '#cdd6f4'
   showIcons: true
-
 git:
   pagers:
     - colorArgs: always
       pager: delta --dark --paging=never -s
   commit:
     signOff: false
-
 keybinding:
   universal:
     quit: 'q'

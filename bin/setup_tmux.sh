@@ -4,9 +4,7 @@ echo "----------------------SETTING UP TMUX-----------------------"
 
 ./bin/install.sh tmux
 
-# cd ..
 stow tmux
-# cd -
 
 # Clone TPM if it doesn't exist
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
@@ -18,3 +16,5 @@ fi
 
 # Setup tmux sess
 git clone https://github.com/tehritarun/tmux-sess.git "${HOME}/projects/tmux-sess"
+mkdir -p ~/.config/tmux-sess
+cp "${HOME}/projects/tmux-sess/layouts.json" "${HOME}/.config/tmux-sess/tmux-sess.json"
