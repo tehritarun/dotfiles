@@ -15,9 +15,9 @@ gui:
       - '#cdd6f4'
   showIcons: true
 git:
-  pagers:
+  diffRenderers:
     - colorArgs: always
-      pager: delta --dark --paging=never -s
+      command: delta --dark --paging=never -s
   commit:
     signOff: false
 keybinding:
