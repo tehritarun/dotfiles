@@ -1,8 +1,9 @@
 #!/bin/sh
-HISTFILE="${XDG_DATA_HOME:-${HOME}/.local/share}"/zsh/history
+HISTFILE="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/history"
+[ -d "${XDG_DATA_HOME:-${HOME}/.local/share}/zsh" ] || mkdir "${XDG_DATA_HOME:-${HOME}/.local/share}/zsh"
+touch "$HISTFILE"
 HISTSIZE=5000
 SAVEHIST=5000
-touch "$HISTFILE"
 HISTDUP=erase
 
 export PATH="$HOME/.local/bin":$PATH
