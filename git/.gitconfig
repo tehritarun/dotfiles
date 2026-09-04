@@ -11,3 +11,5 @@
 
 [mergetool "nvim"]
   cmd = nvim -f -c "Gvdiffsplit!" "$MERGED"
+[init]
+	defaultBranch = main

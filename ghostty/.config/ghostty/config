@@ -9,3 +9,6 @@ cursor-style-blink = false
 background-opacity = 0.9
 background-blur = 30
 theme = TokyoNight
+confirm-close-surface = false
+fullscreen = false
+window-decoration = none

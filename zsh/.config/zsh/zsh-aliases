@@ -12,6 +12,7 @@ alias ...='cd ../..'
 alias import_photos='uv run ~/projects/python_scripts/import_photos.py'
 
 # TMUX aliases
+alias hh='/Users/taruntehri/projects/tmux-sess/herdr-sess.sh'
 alias tt="$HOME/projects/tmux-sess/tmux-sess.sh"
 alias ta='tmux a'
 alias tl='tmux ls'

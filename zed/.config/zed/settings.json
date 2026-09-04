@@ -66,5 +66,6 @@
     "tokyo-night": true,
     "dockerfile": true,
     "docker-compose": true,
+    "go-snippets": true,
   },
 }
