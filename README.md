@@ -1,6 +1,6 @@
 # dotfiles
 
-## One click install
+## One command setup
 ``` bash
 curl -fsSL https://raw.githubusercontent.com/tehritarun/dotfiles/refs/heads/main/bin/bootstrap.sh | bash
 ```

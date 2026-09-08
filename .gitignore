@@ -3,6 +3,8 @@ plugins
 
 # zsh dump
 .zcompdump
+.zcompcache
+.zsh_sessions
 
 # zed prompts directory
 prompts
